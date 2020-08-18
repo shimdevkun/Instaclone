@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Instaclone.Models.Post>
+@{
+    ViewBag.Title = "Explore";
+}
+
+<h2>Explore</h2>
+
+@foreach (var post in Model)
+{
+    <div class="card">
+        <div class="card-header">
+            @post.User.UserName
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@post.DateTime.ToString("dd-MM-yyyy")</h5>
+            <p class="card-text">@post.Description</p>
+        </div>
+    </div>
+}

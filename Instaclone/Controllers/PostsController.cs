@@ -1,6 +1,8 @@
 ﻿using Instaclone.Models;
 using Microsoft.AspNet.Identity;
 using System;
+using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Instaclone.Controllers
@@ -14,6 +16,7 @@ namespace Instaclone.Controllers
         }
 
         
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -28,10 +31,20 @@ namespace Instaclone.Controllers
             post.DateTime = DateTime.Now;
             post.UserId = User.Identity.GetUserId();
 
+
             _context.Posts.Add(post);
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Explore()
+        {
+            var posts = _context.Posts
+                .Include(p => p.User)
+                .ToList()
+                .OrderByDescending(p => p.DateTime);
+            return View(posts);
         }
     }
 }

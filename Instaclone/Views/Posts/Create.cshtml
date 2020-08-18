@@ -11,12 +11,17 @@
     <div class="form-group">
         @Html.LabelFor(m => m.ImageSrc)
         @Html.TextBoxFor(m => m.ImageSrc, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ImageSrc, null, new { @class = "" })
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Description)
         @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Description)
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>
 }
+
+
+@Scripts.Render("~/bundles/jqueryval")

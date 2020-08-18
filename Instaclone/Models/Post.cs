@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Instaclone.Validations;
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Instaclone.Models
 {
@@ -6,7 +9,13 @@ namespace Instaclone.Models
     {
         public int Id { get; set; }
         public string UserId { get; set; }
+
+        [DisplayName("Image link")]
+        [Required]
+        [IsValidUrl(ErrorMessage = "Enter a valid image url")]
         public string ImageSrc { get; set; }
+
+        [Required]
         public string Description { get; set; }
         public DateTime DateTime { get; set; }
 
