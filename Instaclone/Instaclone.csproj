@@ -188,6 +188,10 @@
     <Compile Include="Migrations\202008181522139_AddRequiredFields.Designer.cs">
       <DependentUpon>202008181522139_AddRequiredFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008182115376_AddNameProperty.cs" />
+    <Compile Include="Migrations\202008182115376_AddNameProperty.Designer.cs">
+      <DependentUpon>202008182115376_AddNameProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -383,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008181522139_AddRequiredFields.resx">
       <DependentUpon>202008181522139_AddRequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008182115376_AddNameProperty.resx">
+      <DependentUpon>202008182115376_AddNameProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
