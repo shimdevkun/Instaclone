@@ -11,11 +11,11 @@
 <body>
     <div class="navbar bg-dark fixed-top navbar-dark navbar-expand-lg">
         <div class="container">
+            @Html.ActionLink("Instaclone", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @Html.ActionLink("Instaclone", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <div class="collapse navbar-collapse" id="navbarText">
+            <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">@Html.ActionLink("Feed", "Posts", "Home", new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Explore", "Posts", "Home", new { @class = "nav-link" })</li>
