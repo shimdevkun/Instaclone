@@ -27,3 +27,19 @@ textarea {
 .field-validation-error {
     color: red;
 }
+
+/* Site styles */
+.container--explore {
+    margin-top: 2em;
+    color: #333;
+}
+
+    .container--explore .card-date {
+        color: #666;
+        font-size: 14px;
+        margin: 1em 0;
+    }
+
+    .container--explore .card-description {
+        margin-bottom: 0;
+    }

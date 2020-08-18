@@ -38,6 +38,7 @@ namespace Instaclone.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize]
         public ActionResult Explore()
         {
             var posts = _context.Posts

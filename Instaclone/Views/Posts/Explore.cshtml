@@ -5,15 +5,26 @@
 
 <h2>Explore</h2>
 
-@foreach (var post in Model)
-{
-    <div class="card">
-        <div class="card-header">
-            @post.User.UserName
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">@post.DateTime.ToString("dd-MM-yyyy")</h5>
-            <p class="card-text">@post.Description</p>
-        </div>
+<div class="container--explore">
+
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        @post.User.UserName
+                    </div>
+                    <div class="card-body">
+                        <img class="img-thumbnail" src=@post.ImageSrc alt="" />
+                        <div class="card-text">
+                            <p class="card-date">@post.DateTime.ToString("dd-MM-yyyy")</p>
+                            <p class="card-description">@post.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-}
+
+</div>
