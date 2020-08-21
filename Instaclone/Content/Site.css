@@ -29,7 +29,7 @@ textarea {
 }
 
 /* Site styles */
-h2 {
+body {
     color: #333333;
 }
 
@@ -66,4 +66,14 @@ a:hover {
 
 .container--explore .card-description {
     margin-bottom: 0;
+}
+
+.container--followees .row {
+    margin-top: 2em;
+}
+
+.container--followees .card {
+    padding: 1em;
+    background: #fafafa;
+    border: none;
 }

@@ -44,5 +44,16 @@ namespace Instaclone.Controllers
             TempData["Message"] = "You are now following " + _context.Users.Single(u => u.Id == followeeId).Name;
             return RedirectToAction("Explore", "Posts");
         }
+
+        public ActionResult MyFollowees()
+        {
+            var userId = User.Identity.GetUserId();
+            var followees = _context.Follows
+                .Where(f => f.FollowerId == userId)
+                .Select(f => f.Followee)
+                .ToList();
+
+            return View(followees);
+        }
     }
 }

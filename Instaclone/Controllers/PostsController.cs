@@ -60,6 +60,7 @@ namespace Instaclone.Controllers
             return View(viewModel);
         }
 
+        [Authorize]
         public ActionResult Feed()
         {
             var userId = User.Identity.GetUserId();

@@ -3,6 +3,9 @@
     ViewBag.Title = "Create";
 }
 
+<button class="btn btn-primary" onclick="location.href='@Url.Action("MyFollowees", "Follows")'">Who I'm following</button>
+<hr />
+
 <h2>Create</h2>
 
 @using (Html.BeginForm("Create", "Posts"))
