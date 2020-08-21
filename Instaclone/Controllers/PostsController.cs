@@ -59,5 +59,20 @@ namespace Instaclone.Controllers
 
             return View(viewModel);
         }
+
+        public ActionResult Feed()
+        {
+            var userId = User.Identity.GetUserId();
+            var followeesIds = _context.Follows.Where(f => f.FollowerId == userId).Select(f => f.FolloweeId).ToList();
+
+
+            var posts = _context.Posts
+                .Where(p => followeesIds.Contains(p.UserId))
+                .Include(p => p.User)
+                .ToList()
+                .OrderByDescending(p => p.DateTime);
+
+            return View(posts);
+        }
     }
 }

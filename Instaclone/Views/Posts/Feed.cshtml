@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Instaclone.Models.Post>
+@{
+    ViewBag.Title = "Feed";
+}
+
+<h2>Feed</h2>
+
+<div class="container--feed">
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-header">
+                        <a>@post.User.Name</a>
+                    </div>
+                    <div class="card-body">
+                        <img class="card-img" src=@post.ImageSrc alt=""/>
+                        <div class="card-text">
+                            <p class="card-date">@post.DateTime.ToString("dd-MM-yyyy")</p>
+                            <p class="card-description">@post.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
