@@ -1,22 +1,39 @@
-﻿@model IEnumerable<Instaclone.Models.Post>
+﻿@using Microsoft.AspNet.Identity
+@model Instaclone.ViewModels.ExploreViewModel
 @{
     ViewBag.Title = "Explore";
 }
 
 <h2>Explore</h2>
 
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["Message"]
+    </div>
+}
+
 <div class="container--explore">
 
     <div class="row">
-        @foreach (var post in Model)
+        @foreach (var post in Model.Posts)
         {
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-header">
-                        @post.User.UserName
+                        <a>@post.User.Name</a>
+                        @if (Model.Followees.Contains(post.UserId))
+                        {
+                            <p class="text-black-50">Following</p>
+                        }
+                        else if (post.UserId != User.Identity.GetUserId())
+                        {
+                            @Html.ActionLink("Follow", "Follow", "Follows", new { followeeId = post.User.Id }, new { @class = "text-primary" })
+                        }
+
                     </div>
                     <div class="card-body">
-                        <img class="img-thumbnail" src=@post.ImageSrc alt="" />
+                        <img class="card-img" src=@post.ImageSrc alt="" />
                         <div class="card-text">
                             <p class="card-date">@post.DateTime.ToString("dd-MM-yyyy")</p>
                             <p class="card-description">@post.Description</p>
@@ -28,3 +45,10 @@
     </div>
 
 </div>
+
+<script>
+    var uri = 'api/follows';
+    $(".follow-link").click(function () {
+        console.log('lol');
+    });
+</script>

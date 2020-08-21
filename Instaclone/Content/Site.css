@@ -29,17 +29,35 @@ textarea {
 }
 
 /* Site styles */
-.container--explore {
-    margin-top: 2em;
-    color: #333;
+a:hover {
+    cursor: pointer;
 }
 
-    .container--explore .card-date {
-        color: #666;
-        font-size: 14px;
-        margin: 1em 0;
+.container--explore {
+    color: #333;
+    
+}
+
+.container--explore .card {
+        margin-top: 2em;
     }
 
-    .container--explore .card-description {
-        margin-bottom: 0;
-    }
+.container--explore .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.container--explore .card-header p {
+    margin-bottom: 0;
+}
+
+.container--explore .card-date {
+color: #666;
+font-size: 14px;
+margin: 1em 0;
+}
+
+.container--explore .card-description {
+    margin-bottom: 0;
+}

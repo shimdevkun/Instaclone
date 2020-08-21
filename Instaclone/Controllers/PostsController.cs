@@ -1,4 +1,5 @@
 ﻿using Instaclone.Models;
+using Instaclone.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Data.Entity;
@@ -45,7 +46,18 @@ namespace Instaclone.Controllers
                 .Include(p => p.User)
                 .ToList()
                 .OrderByDescending(p => p.DateTime);
-            return View(posts);
+
+            var userId = User.Identity.GetUserId();
+            var followees = _context.Follows.Where(f => f.FollowerId == userId).Select(f => f.Followee)
+                .ToLookup(u => u.Id);
+
+            var viewModel = new ExploreViewModel
+            {
+                Posts = posts,
+                Followees = followees
+            };
+
+            return View(viewModel);
         }
     }
 }
