@@ -16,6 +16,18 @@ namespace Instaclone.Controllers
             _context = new ApplicationDbContext();
         }
 
+        [Authorize]
+        public ActionResult MyProfile()
+        {
+            var userId = User.Identity.GetUserId();
+            var posts = _context.Posts
+                .Where(p => p.UserId == userId)
+                .Include(p => p.User)
+                .ToList();
+
+            return View(posts);
+        }
+
         
         [Authorize]
         public ActionResult Create()

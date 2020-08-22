@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Instaclone.Models.Post>
+@{
+    ViewBag.Title = "MyProfile";
+}
+
+<h2>My Profile</h2>
+<div class="container--profile">
+
+    <button class="btn btn-outline-primary btn-followees" onclick="location.href='@Url.Action("MyFollowees", "Follows")'">Who I'm following</button>
+    <br />
+    <button class="btn btn-primary" onclick="location.href = '@Url.Action("Create", "Posts")'">Add a Post</button>
+    <hr />
+
+    <div class="row posts">
+
+        @foreach (var post in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        <a>@post.User.Name</a>
+                    </div>
+                    <div class="card-body">
+                        <img class="card-img" src=@post.ImageSrc alt="" />
+                        <div class="card-text">
+                            <p class="card-date">@post.DateTime.ToString("dd-MM-yyyy")</p>
+                            <p class="card-description">@post.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

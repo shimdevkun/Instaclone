@@ -381,6 +381,7 @@
     <Content Include="Views\Posts\Explore.cshtml" />
     <Content Include="Views\Posts\Feed.cshtml" />
     <Content Include="Views\Follows\MyFollowees.cshtml" />
+    <Content Include="Views\Posts\MyProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
