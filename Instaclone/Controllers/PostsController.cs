@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Instaclone.Controllers
 {
+    [Authorize]
     public class PostsController : Controller
     {
         public ApplicationDbContext _context { get; set; }
@@ -16,7 +17,6 @@ namespace Instaclone.Controllers
             _context = new ApplicationDbContext();
         }
 
-        [Authorize]
         public ActionResult MyProfile()
         {
             var userId = User.Identity.GetUserId();
@@ -28,8 +28,6 @@ namespace Instaclone.Controllers
             return View(posts);
         }
 
-        
-        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -51,7 +49,6 @@ namespace Instaclone.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [Authorize]
         public ActionResult Explore()
         {
             var posts = _context.Posts
@@ -72,7 +69,6 @@ namespace Instaclone.Controllers
             return View(viewModel);
         }
 
-        [Authorize]
         public ActionResult Feed()
         {
             var userId = User.Identity.GetUserId();
@@ -86,6 +82,22 @@ namespace Instaclone.Controllers
                 .OrderByDescending(p => p.DateTime);
 
             return View(posts);
+        }
+
+        public ActionResult Delete(int postId)
+        {
+            var userId = User.Identity.GetUserId();
+            var post = _context.Posts
+                .SingleOrDefault(p => p.UserId == userId && p.Id == postId);
+
+            if (post == null)
+                return HttpNotFound();
+
+            _context.Posts.Remove(post);
+            _context.SaveChanges();
+            TempData["Message"] = "The post was successfully deleted";
+
+            return RedirectToAction("MyProfile");
         }
     }
 }

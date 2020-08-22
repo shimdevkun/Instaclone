@@ -4,12 +4,21 @@
 }
 
 <h2>My Profile</h2>
+
 <div class="container--profile">
 
     <button class="btn btn-outline-primary btn-followees" onclick="location.href='@Url.Action("MyFollowees", "Follows")'">Who I'm following</button>
     <br />
     <button class="btn btn-primary" onclick="location.href = '@Url.Action("Create", "Posts")'">Add a Post</button>
     <hr />
+    
+    
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-info">
+            @TempData["Message"]
+        </div>
+    }
 
     <div class="row posts">
 
@@ -19,6 +28,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a>@post.User.Name</a>
+                        @Html.ActionLink("Delete", "Delete", "Posts", new { postId = post.Id }, new { @class = "text-danger" })
                     </div>
                     <div class="card-body">
                         <img class="card-img" src=@post.ImageSrc alt="" />

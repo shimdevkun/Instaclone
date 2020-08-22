@@ -47,7 +47,8 @@ a:hover {
     margin-top: 2em;
 }
 
-.container--explore .card-header {
+.container--explore .card-header,
+.container--profile .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center

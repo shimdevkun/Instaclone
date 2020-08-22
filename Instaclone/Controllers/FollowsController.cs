@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace Instaclone.Controllers
 {
+    [Authorize]
     public class FollowsController : Controller
     {
         public ApplicationDbContext _context { get; set; }
