@@ -206,10 +206,15 @@
     <Compile Include="Migrations\202008201904558_DropTable.Designer.cs">
       <DependentUpon>202008201904558_DropTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008230245584_AddComment.cs" />
+    <Compile Include="Migrations\202008230245584_AddComment.Designer.cs">
+      <DependentUpon>202008230245584_AddComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Follow.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Post.cs" />
@@ -412,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008201904558_DropTable.resx">
       <DependentUpon>202008201904558_DropTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008230245584_AddComment.resx">
+      <DependentUpon>202008230245584_AddComment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
