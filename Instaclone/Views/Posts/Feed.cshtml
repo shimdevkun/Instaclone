@@ -14,13 +14,7 @@
                     <div class="card-header">
                         <a>@post.User.Name</a>
                     </div>
-                    <div class="card-body">
-                        <img class="card-img" src=@post.ImageSrc alt=""/>
-                        <div class="card-text">
-                            <p class="card-date">@post.DateTime.ToString("dd-MM-yyyy")</p>
-                            <p class="card-description">@post.Description</p>
-                        </div>
-                    </div>
+                    @{ Html.RenderPartial("_PostCardBody", post); }
                 </div>
             </div>
         }

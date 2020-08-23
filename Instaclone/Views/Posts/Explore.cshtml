@@ -16,6 +16,7 @@
 <div class="container--explore">
 
     <div class="row">
+        
         @foreach (var post in Model.Posts)
         {
             <div class="col-sm-4">
@@ -30,25 +31,11 @@
                         {
                             @Html.ActionLink("Follow", "Follow", "Follows", new { followeeId = post.User.Id }, new { @class = "text-primary" })
                         }
-
                     </div>
-                    <div class="card-body">
-                        <img class="card-img" src=@post.ImageSrc alt="" />
-                        <div class="card-text">
-                            <p class="card-date">@post.DateTime.ToString("dd-MM-yyyy")</p>
-                            <p class="card-description">@post.Description</p>
-                        </div>
-                    </div>
+                    @{ Html.RenderPartial("_PostCardBody", post); }
                 </div>
             </div>
         }
     </div>
 
 </div>
-
-<script>
-    var uri = 'api/follows';
-    $(".follow-link").click(function () {
-        console.log('lol');
-    });
-</script>

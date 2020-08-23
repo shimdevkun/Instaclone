@@ -1,0 +1,9 @@
+﻿@model Instaclone.Models.Post
+
+<div class="card-body">
+    <img class="card-img" src=@Model.ImageSrc alt="" />
+    <div class="card-text">
+        <p class="card-date">@Model.DateTime.ToString("dd-MM-yyyy")</p>
+        <p class="card-description">@Model.Description</p>
+    </div>
+</div>
