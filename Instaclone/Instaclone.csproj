@@ -221,6 +221,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validations\IsValidUrlAttribute.cs" />
+    <Compile Include="ViewModels\CardBodyViewModel.cs" />
     <Compile Include="ViewModels\ExploreViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

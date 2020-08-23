@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Instaclone.Models.Post>
+﻿@using Instaclone.ViewModels
+@model IEnumerable<Instaclone.Models.Post>
 @{
     ViewBag.Title = "Feed";
 }
@@ -14,7 +15,7 @@
                     <div class="card-header">
                         <a>@post.User.Name</a>
                     </div>
-                    @{ Html.RenderPartial("_PostCardBody", post); }
+                    @{ Html.RenderPartial("_PostCardBody", new CardBodyViewModel { Post = post }); }
                 </div>
             </div>
         }

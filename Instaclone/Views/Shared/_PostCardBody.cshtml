@@ -1,9 +1,25 @@
-﻿@model Instaclone.Models.Post
+﻿@using Instaclone.Models
+@model Instaclone.ViewModels.CardBodyViewModel
 
 <div class="card-body">
-    <img class="card-img" src=@Model.ImageSrc alt="" />
+    <img class="card-img" src=@Model.Post.ImageSrc alt="" />
     <div class="card-text">
-        <p class="card-date">@Model.DateTime.ToString("dd-MM-yyyy")</p>
-        <p class="card-description">@Model.Description</p>
+        <p class="card-date">@Model.Post.DateTime.ToString("dd-MM-yyyy")</p>
+        <p class="card-description">@Model.Post.Description</p>
+    </div>
+    <hr />
+    <div class="card-comment">
+        @using (Html.BeginForm("Create", "Comment"))
+        {
+            @Html.AntiForgeryToken();
+
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Comment.Content, new { @class = "form-control", placeholder = "Add a comment..." })
+                @Html.ValidationMessageFor(m => m.Comment.Content)
+            </div>
+            
+
+            <button type="submit" class="btn btn-outline-primary">Post</button>
+        }
     </div>
 </div>

@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using Instaclone.Models
+@using Instaclone.ViewModels
+@using Microsoft.AspNet.Identity
 @model Instaclone.ViewModels.ExploreViewModel
 @{
     ViewBag.Title = "Explore";
@@ -32,7 +34,7 @@
                             @Html.ActionLink("Follow", "Follow", "Follows", new { followeeId = post.User.Id }, new { @class = "text-primary" })
                         }
                     </div>
-                    @{ Html.RenderPartial("_PostCardBody", post); }
+                    @{ Html.RenderPartial("_PostCardBody", new CardBodyViewModel { Post = post }); }
                 </div>
             </div>
         }

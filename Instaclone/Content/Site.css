@@ -87,3 +87,27 @@ a:hover {
 .container--profile .posts{
     margin-top: 2em;
 }
+
+.card .card-comment form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .card-comment form .form-group {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.card .card-comment .form-control {
+    max-width: 95%;
+    border: none;
+}
+
+.col-sm-8 .card .card-comment .btn {
+    padding: .5em 2em;
+}
+
+.card .card-comment .form-control:focus {
+    box-shadow: none;
+}
