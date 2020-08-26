@@ -179,6 +179,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\FollowsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -389,6 +390,7 @@
     <Content Include="Views\Follows\MyFollowees.cshtml" />
     <Content Include="Views\Posts\MyProfile.cshtml" />
     <Content Include="Views\Shared\_PostCardBody.cshtml" />
+    <Content Include="Views\Comments\Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

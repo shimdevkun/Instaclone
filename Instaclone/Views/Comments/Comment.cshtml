@@ -1,0 +1,23 @@
+﻿@model Instaclone.ViewModels.CardBodyViewModel
+@{
+    ViewBag.Title = "Comment";
+}
+
+<div class="container--comment">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="alert alert-danger">
+                @Html.ValidationMessageFor(m => m.Comment.Content)
+            </div>
+        
+
+            <div class="card">
+                <div class="card-header">
+                    <a>@Model.Post.User.Name</a>
+                </div>
+                @{ Html.RenderPartial("_PostCardBody", Model); }
+            </div>
+        </div>
+    </div>
+</div>
+

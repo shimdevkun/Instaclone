@@ -1,4 +1,5 @@
 ﻿@using Instaclone.Models
+@using Microsoft.AspNet.Identity
 @model Instaclone.ViewModels.CardBodyViewModel
 
 <div class="card-body">
@@ -8,16 +9,18 @@
         <p class="card-description">@Model.Post.Description</p>
     </div>
     <hr />
+
     <div class="card-comment">
-        @using (Html.BeginForm("Create", "Comment"))
+        @using (Html.BeginForm("Create", "Comments"))
         {
             @Html.AntiForgeryToken();
 
+            @Html.HiddenFor(m => Model.Comment.PostId, new { Value = Model.Post.Id });
+            @Html.HiddenFor(m => Model.Comment.UserId, new { Value = User.Identity.GetUserId() });
+
             <div class="form-group">
                 @Html.TextBoxFor(m => m.Comment.Content, new { @class = "form-control", placeholder = "Add a comment..." })
-                @Html.ValidationMessageFor(m => m.Comment.Content)
             </div>
-            
 
             <button type="submit" class="btn btn-outline-primary">Post</button>
         }

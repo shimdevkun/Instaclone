@@ -60,7 +60,8 @@ a:hover {
 
 .container--explore .card-date,
 .container--feed .card-date,
-.container--profile .card-date {
+.container--profile .card-date,
+.container--comment .card-date {
     color: #666;
     font-size: 14px;
     margin: 1em 0;
