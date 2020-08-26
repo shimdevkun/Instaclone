@@ -211,6 +211,10 @@
     <Compile Include="Migrations\202008230245584_AddComment.Designer.cs">
       <DependentUpon>202008230245584_AddComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008260220474_UserIdRequiredInPost.cs" />
+    <Compile Include="Migrations\202008260220474_UserIdRequiredInPost.Designer.cs">
+      <DependentUpon>202008260220474_UserIdRequiredInPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -424,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008230245584_AddComment.resx">
       <DependentUpon>202008230245584_AddComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008260220474_UserIdRequiredInPost.resx">
+      <DependentUpon>202008260220474_UserIdRequiredInPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

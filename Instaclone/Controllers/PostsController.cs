@@ -23,6 +23,7 @@ namespace Instaclone.Controllers
             var posts = _context.Posts
                 .Where(p => p.UserId == userId)
                 .Include(p => p.User)
+                .OrderByDescending(p => p.DateTime)
                 .ToList();
 
             return View(posts);
@@ -40,21 +41,21 @@ namespace Instaclone.Controllers
                 return View(post);
 
             post.DateTime = DateTime.Now;
-            post.UserId = User.Identity.GetUserId();
-
 
             _context.Posts.Add(post);
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            TempData["Message"] = "The post was successfully created";
+
+            return RedirectToAction("MyProfile");
         }
 
         public ActionResult Explore()
         {
             var posts = _context.Posts
                 .Include(p => p.User)
-                .ToList()
-                .OrderByDescending(p => p.DateTime);
+                .OrderByDescending(p => p.DateTime)
+                .ToList();
 
             var userId = User.Identity.GetUserId();
             var followees = _context.Follows.Where(f => f.FollowerId == userId).Select(f => f.Followee)
@@ -78,8 +79,8 @@ namespace Instaclone.Controllers
             var posts = _context.Posts
                 .Where(p => followeesIds.Contains(p.UserId))
                 .Include(p => p.User)
-                .ToList()
-                .OrderByDescending(p => p.DateTime);
+                .OrderByDescending(p => p.DateTime)
+                .ToList();
 
             return View(posts);
         }

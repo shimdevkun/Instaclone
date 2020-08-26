@@ -8,6 +8,8 @@ namespace Instaclone.Models
     public class Post
     {
         public int Id { get; set; }
+
+        [Required]
         public string UserId { get; set; }
 
         [DisplayName("Image link")]
@@ -17,8 +19,8 @@ namespace Instaclone.Models
 
         [Required]
         public string Description { get; set; }
-        public DateTime DateTime { get; set; }
 
+        public DateTime DateTime { get; set; }
 
         public ApplicationUser User { get; set; }
     }
