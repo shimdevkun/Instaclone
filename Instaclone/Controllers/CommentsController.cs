@@ -19,7 +19,7 @@ namespace Instaclone.Controllers
         [HttpPost]
         public ActionResult Create(Comment comment)
         {
-            CardBodyViewModel vm = new CardBodyViewModel
+            PostCommentViewModel vm = new PostCommentViewModel
             {
                 Post = _context.Posts
                     .Include(p => p.User)
@@ -37,12 +37,12 @@ namespace Instaclone.Controllers
 
             TempData["Message"] = "Comment was posted successfully";
 
-            return RedirectToAction("Explore", "Posts");
+            return RedirectToAction("Details", "Posts", new { postId = comment.PostId });
         }
 
-        public ActionResult Comment(CardBodyViewModel cardBodyVM)
+        public ActionResult Comment(PostCommentViewModel postCommentVm)
         {
-            return View(cardBodyVM);
+            return View(postCommentVm);
         }
     }
 }

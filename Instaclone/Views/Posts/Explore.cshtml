@@ -6,7 +6,6 @@
     ViewBag.Title = "Explore";
 }
 
-
 @if (TempData["Message"] != null)
 {
     <div class="alert alert-info">
@@ -32,10 +31,10 @@
                         }
                         else if (post.UserId != User.Identity.GetUserId())
                         {
-                            @Html.ActionLink("Follow", "Follow", "Follows", new { followeeId = post.User.Id }, new { @class = "text-primary" })
+                            @Html.ActionLink("Follow", "Follow", "Follows", new { @followeeId = post.User.Id, @actionName = "Explore", @postId = post.Id }, new { @class = "text-primary" })
                         }
                     </div>
-                    @{ Html.RenderPartial("_PostCardBody", new CardBodyViewModel { Post = post }); }
+                    @{ Html.RenderPartial("_PostCardBody", new PostCommentViewModel { Post = post }); }
                 </div>
             </div>
         }

@@ -15,7 +15,7 @@ namespace Instaclone.Controllers
             _context = new ApplicationDbContext();
         }
 
-        public ActionResult Follow(string followeeId)
+        public ActionResult Follow(string followeeId, string actionName, int postId)
         {
             var userId = User.Identity.GetUserId();
 
@@ -23,13 +23,13 @@ namespace Instaclone.Controllers
             if (_context.Follows.Any(f => f.FollowerId == userId && f.FolloweeId == followeeId))
             {
                 TempData["Message"] = "You are already following this person";
-                return RedirectToAction("Explore", "Posts");
+                return RedirectToAction(actionName, "Posts");
             }
 
             if (followeeId == userId)
             {
                 TempData["Message"] = "You cannot follow yourself";
-                return RedirectToAction("Explore", "Posts");
+                return RedirectToAction(actionName, "Posts");
             }
 
             var follow = new Follow
@@ -43,7 +43,7 @@ namespace Instaclone.Controllers
 
 
             TempData["Message"] = "You are now following " + _context.Users.Single(u => u.Id == followeeId).Name;
-            return RedirectToAction("Explore", "Posts");
+            return RedirectToAction(actionName, "Posts", new { postId = postId });
         }
 
         public ActionResult MyFollowees()

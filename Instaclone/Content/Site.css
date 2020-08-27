@@ -48,13 +48,28 @@ a:hover {
 }
 
 .container--explore .card-header,
-.container--profile .card-header {
+.container--profile .card-header,
+.container--post-details .post--user {
     display: flex;
     justify-content: space-between;
     align-items: center
 }
 
-.container--explore .card-header p {
+.container--post-details .post--user {
+    border-bottom: 1px solid #333333;
+    padding-bottom: .75em;
+}
+
+.container--post-details .card-description {
+    margin: 1em 0 0;
+}
+
+.container--post-details .card-date {
+    margin-top: 0;
+}
+
+.container--explore .card-header p,
+.post--user p {
     margin-bottom: 0;
 }
 
@@ -119,6 +134,10 @@ a:hover {
     padding: 0 2rem;
 }
 
+.comment + .comment {
+    margin-top: 1em;
+}
+
 .card-user,
 .comment-user {
     font-weight: bold;
@@ -126,15 +145,10 @@ a:hover {
 
 
 .comment-user {
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
 
 .comment-description,
 .comment-date {
     margin: 0;
-}
-
-.container--post--image {
-    display: flex;
-    align-items: center;
 }

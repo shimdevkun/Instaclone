@@ -15,7 +15,7 @@
                     <div class="card-header">
                         <a>@post.User.Name</a>
                     </div>
-                    @{ Html.RenderPartial("_PostCardBody", new CardBodyViewModel { Post = post }); }
+                    @{ Html.RenderPartial("_PostCardBody", new PostCommentViewModel { Post = post }); }
                 </div>
             </div>
         }

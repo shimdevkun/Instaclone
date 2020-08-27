@@ -109,7 +109,17 @@ namespace Instaclone.Controllers
                 .Include(p => p.Comments)
                 .Single(p => p.Id == postId);
 
-            return View(post);
+            var userId = User.Identity.GetUserId();
+            var followees = _context.Follows.Where(f => f.FollowerId == userId).Select(f => f.Followee)
+                .ToLookup(u => u.Id);
+
+            var viewModel = new PostCommentViewModel
+            {
+                Post = post,
+                CurrentUserFollowees = followees
+            };
+
+            return View(viewModel);
         }
     }
 }

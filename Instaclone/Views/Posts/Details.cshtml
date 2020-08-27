@@ -1,33 +1,68 @@
 ﻿@using Microsoft.AspNet.Identity
-@model Instaclone.Models.Post
+@model Instaclone.ViewModels.PostCommentViewModel
 @{
     ViewBag.Title = "Details";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["Message"]
+    </div>
 }
 
 <h2>Details</h2>
 
 <div class="container--post-details">
-    <div class="card col-md-12">
+    <div class="card col-md-10">
         <div class="row no-gutters">
-            <div class="container--post--image col-md-4">
-                <img src="@Model.ImageSrc" class="card-img" alt="">
+            <div class="container--post--image col-md-7">
+                <img src="@Model.Post.ImageSrc" class="card-img" alt="">
+
+
+                <hr />
+                <div class="card-comment">
+                    @using (Html.BeginForm("Create", "Comments"))
+                    {
+                        @Html.AntiForgeryToken()
+                        ;
+
+                        @Html.HiddenFor(m => Model.Comment.PostId, new { Value = Model.Post.Id })
+                        ;
+                        @Html.HiddenFor(m => Model.Comment.UserId, new { Value = User.Identity.GetUserId() })
+                        ;
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.Comment.Content, new { @class = "form-control", placeholder = "Add a comment..." })
+                        </div>
+
+                        <button type="submit" class="btn btn-outline-primary">Post</button>
+                    }
+                </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-5">
                 <div class="card-body">
                     <div class="post--user">
-                        <a class="card-title card-user">@Model.User.Name</a>
-                        <p class="text-black-50">Following</p>
-                    </div>
-                
-                    <div class="card-text">
-                        <p class="card-date">@Model.DateTime.ToString("dd-MM-yyyy")</p>
-                        <p class="card-description">@Model.Description</p>
+                        <a class="card-user">@Model.Post.User.Name</a>
+                        @if (Model.CurrentUserFollowees.Contains(Model.Post.UserId))
+                        {
+                            <p class="text-black-50">Following</p>
+                        }
+                        else if (Model.Post.UserId != User.Identity.GetUserId())
+                        {
+                            @Html.ActionLink("Follow", "Follow", "Follows", new { @followeeId = Model.Post.UserId, @actionName = "Details", @postId = Model.Post.Id }, new { @class = "text-primary" })
+                        }
                     </div>
 
-                    <hr />
+                    <div class="card-text">
+                        <p class="card-description">
+                            <a class="comment-user">@Model.Post.User.Name</a> @Model.Post.Description
+                        </p>
+                        <p class="card-date">@Model.Post.DateTime.ToString("dd-MM-yyyy")</p>
+                    </div>
 
                     <div class="post--comments">
-                        @foreach (var comment in Model.Comments)
+                        @foreach (var comment in Model.Post.Comments)
                         {
                             <div class="comment">
                                 <p class="comment-description">
@@ -36,10 +71,6 @@
                                 <p class="comment-date">@comment.DateTime.ToString("dd-MM-yyyy")</p>
                             </div>
                         }
-                    </div>
-                
-                    <div class="card-comment">
-                        <p>Form goes here</p>
                     </div>
                 </div>
             </div>
