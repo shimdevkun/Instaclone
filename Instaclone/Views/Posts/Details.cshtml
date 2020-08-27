@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNet.Identity
+@model Instaclone.Models.Post
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="container--post-details">
+    <div class="card col-md-12">
+        <div class="row no-gutters">
+            <div class="container--post--image col-md-4">
+                <img src="@Model.ImageSrc" class="card-img" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="post--user">
+                        <a class="card-title card-user">@Model.User.Name</a>
+                        <p class="text-black-50">Following</p>
+                    </div>
+                
+                    <div class="card-text">
+                        <p class="card-date">@Model.DateTime.ToString("dd-MM-yyyy")</p>
+                        <p class="card-description">@Model.Description</p>
+                    </div>
+
+                    <hr />
+
+                    <div class="post--comments">
+                        @foreach (var comment in Model.Comments)
+                        {
+                            <div class="comment">
+                                <p class="comment-description">
+                                    <a class="comment-user">@comment.User.Name</a> @comment.Content
+                                </p>
+                                <p class="comment-date">@comment.DateTime.ToString("dd-MM-yyyy")</p>
+                            </div>
+                        }
+                    </div>
+                
+                    <div class="card-comment">
+                        <p>Form goes here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

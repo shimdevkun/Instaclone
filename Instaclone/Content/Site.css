@@ -58,18 +58,16 @@ a:hover {
     margin-bottom: 0;
 }
 
-.container--explore .card-date,
-.container--feed .card-date,
-.container--profile .card-date,
-.container--comment .card-date {
+.card-date,
+.comment-date {
     color: #666;
     font-size: 14px;
     margin: 1em 0;
 }
-
-.container--explore .card-description {
-    margin-bottom: 0;
+.card-check-comments {
+    font-size: .9rem;
 }
+
 
 .container--followees .row {
     margin-top: 2em;
@@ -111,4 +109,32 @@ a:hover {
 
 .card .card-comment .form-control:focus {
     box-shadow: none;
+}
+
+.container--post-details .card {
+    padding: 1rem;
+}
+
+.container--post-details .card-body {
+    padding: 0 2rem;
+}
+
+.card-user,
+.comment-user {
+    font-weight: bold;
+}
+
+
+.comment-user {
+    margin-right: 1em;
+}
+
+.comment-description,
+.comment-date {
+    margin: 0;
+}
+
+.container--post--image {
+    display: flex;
+    align-items: center;
 }

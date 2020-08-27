@@ -85,6 +85,7 @@ namespace Instaclone.Controllers
             return View(posts);
         }
 
+        [HttpPost]
         public ActionResult Delete(int postId)
         {
             var userId = User.Identity.GetUserId();
@@ -99,6 +100,16 @@ namespace Instaclone.Controllers
             TempData["Message"] = "The post was successfully deleted";
 
             return RedirectToAction("MyProfile");
+        }
+
+        public ActionResult Details(int postId)
+        {
+            var post = _context.Posts
+                .Include(p => p.User)
+                .Include(p => p.Comments)
+                .Single(p => p.Id == postId);
+
+            return View(post);
         }
     }
 }

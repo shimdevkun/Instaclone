@@ -395,6 +395,7 @@
     <Content Include="Views\Posts\MyProfile.cshtml" />
     <Content Include="Views\Shared\_PostCardBody.cshtml" />
     <Content Include="Views\Comments\Comment.cshtml" />
+    <Content Include="Views\Posts\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

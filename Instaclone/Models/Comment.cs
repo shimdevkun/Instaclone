@@ -18,7 +18,7 @@ namespace Instaclone.Models
 
         public DateTime DateTime { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
         public Post Post { get; set; }
     }
 }

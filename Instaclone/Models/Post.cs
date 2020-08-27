@@ -1,5 +1,6 @@
 ﻿using Instaclone.Validations;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -23,5 +24,6 @@ namespace Instaclone.Models
         public DateTime DateTime { get; set; }
 
         public ApplicationUser User { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }
