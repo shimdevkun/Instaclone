@@ -67,5 +67,25 @@ namespace Instaclone.Controllers
 
             return View(followers);
         }
+
+        public ActionResult Unfollow(string followeeId)
+        {
+            var followee = _context.Users.SingleOrDefault(u => u.Id == followeeId);
+            if (followee == null)
+                return HttpNotFound();
+
+            var userId = User.Identity.GetUserId();
+            var followees = _context.Follows.Where(f => f.FollowerId == userId).ToList();
+
+            var follow = followees.SingleOrDefault(f => f.FolloweeId == followeeId);
+            if (follow == null)
+                return HttpNotFound();
+
+            _context.Follows.Remove(follow);
+            _context.SaveChanges();
+
+            TempData["Message"] = "You successfully unfollowed " + followee.Name;
+            return RedirectToAction("MyFollowees", "Follows");
+        }
     }
 }

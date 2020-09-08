@@ -85,7 +85,6 @@ namespace Instaclone.Controllers
             return View(posts);
         }
 
-        [HttpPost]
         public ActionResult Delete(int postId)
         {
             var userId = User.Identity.GetUserId();

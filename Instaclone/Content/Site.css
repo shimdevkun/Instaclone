@@ -89,6 +89,14 @@ a:hover {
     margin-top: 2em;
 }
 
+.container--followees .card  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 .container--followees .card,
 .container--followers .card {
     padding: 1em;
