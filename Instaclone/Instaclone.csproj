@@ -396,6 +396,7 @@
     <Content Include="Views\Shared\_PostCardBody.cshtml" />
     <Content Include="Views\Comments\Comment.cshtml" />
     <Content Include="Views\Posts\Details.cshtml" />
+    <Content Include="Views\Follows\MyFollowers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

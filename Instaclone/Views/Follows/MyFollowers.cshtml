@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Instaclone.Models.ApplicationUser>
+@{
+    ViewBag.Title = "MyFollowers";
+}
+
+<h2>Followers</h2>
+
+<div class="container--followers">
+
+    @foreach (var follower in Model)
+    {
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <a>@follower.Name</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

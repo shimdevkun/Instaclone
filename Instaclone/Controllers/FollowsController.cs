@@ -56,5 +56,16 @@ namespace Instaclone.Controllers
 
             return View(followees);
         }
+
+        public ActionResult MyFollowers()
+        {
+            var userId = User.Identity.GetUserId();
+            var followers = _context.Follows
+                .Where(f => f.FolloweeId == userId)
+                .Select(f => f.Follower)
+                .ToList();
+
+            return View(followers);
+        }
     }
 }

@@ -84,11 +84,13 @@ a:hover {
 }
 
 
-.container--followees .row {
+.container--followees .row,
+.container--followers .row {
     margin-top: 2em;
 }
 
-.container--followees .card {
+.container--followees .card,
+.container--followers .card {
     padding: 1em;
     background: #fafafa;
     border: none;
