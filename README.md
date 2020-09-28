@@ -19,14 +19,14 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ## How to use Instaclone
 
-1. Choose (see list below) or create a user to login as
-2. Choose one or more of the following actions
+1. Log in as a user (see list below) // incoming...
+2. Visit the following pages
 
--   View personal feed
--   View explore page
--   View profile page
--   View followers
--   View followees
+-   Personal feed
+-   Explore page
+-   Profile page
+
+3. Try the following actions
 
 -   Create a post
 -   Delete a post
@@ -36,33 +36,43 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ## User Stories
 
+### Iteration #1
+
 -   As a user, I want to create a post
 -   As a user, I want to view all posts
 -   As a user, I want to follow another user
 -   As a user, I want to have a personalized posts feed
 -   As a user, I want to know who I'm following
 
+### Iteration #2
+
 -   As a user, I want to view my posts
 -   As a user, I want to comment on a post
 -   As a user, I want to delete a post
 -   As a user, I want to view post's comments
 
+### Iteration #3
+
 -   As a user, I want to know who follows me
 -   As a user, I want to unfollow a user
 
-## Feature
+## Features
 
--   Personal Feed
-  * Displays all posts from the current user's followees
-- Explore Page
-  * Displays all available posts
-- User Profile
-  * Displays the current user's posts
-- Following
-- Comments
-- Post creation
+-   Post creation
+
+    -   Updates explore page, personal feed and profile page
+    -   Users can currently only follow from the post's follow link
+
+-   Following system
+
+    -   Will update current user's feed
+    -   Users can check their followers and followees on their profile
+    -   Users can currently only unfollow from their profile
+
+-   Comment system
+    -   Users can comment on any post
+    -   Comments will be displayed when checking the post details
 
 ## What it looks like
 
 Incoming...
-
