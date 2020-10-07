@@ -28,9 +28,68 @@ textarea {
     color: red;
 }
 
+.jumbotron {
+    background: #f8f8f8;
+}
+
+.bg-dark {
+    background: #dc2071 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #eaeaea;
+}
+
+.btn.btn-default,
+.btn.btn-primary {
+    color: #eee;
+    background: #dc2071 !important;
+    border-color: #dc2071;
+}
+
+
+.btn.btn-default:hover,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-default:focus {
+    background: #be155e;
+}
+
+.btn.btn-outline-primary {
+    border-color: #dc2071;
+    color: #dc2071;
+}
+
+.btn.btn-outline-primary:hover,
+.btn.btn-outline-primary:focus {
+    background: #dc2071;
+    color: #eee;
+}
+
+.card {
+    border-color: #fafafa;
+    background: #fafafa;
+}
+
+.card-header {
+    background: #fafafa;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+input {
+    background: #fafafa !important;
+    border-color: #fafafa !important;
+}
+
+
 /* Site styles */
 body {
-    color: #333333;
+    color: #4e4e4e;
+    background: #f3f3f3;
+}
+
+h2 {
+    color: #dc2071;
 }
 
 a:hover {
@@ -38,8 +97,7 @@ a:hover {
 }
 
 .container--explore {
-    color: #333;
-    
+    color: #4e4e4e;
 }
 
 .container--explore .card,
@@ -161,4 +219,70 @@ a:hover {
 .comment-description,
 .comment-date {
     margin: 0;
+}
+
+.btn-home {
+    border: none;
+    background: #dc2071;
+}
+
+.jumbotron h1 {
+    color: #dc2071;
+    margin-bottom: .5em;
+}
+
+.jumbotron .lead {
+    font-size: 24px;
+    line-height: 1.75;
+    margin-bottom: 1.5em;
+    color: #333333;
+}
+
+.jumbotron img {
+    border-radius: 5px;
+}
+
+.btn-home:hover,
+.btn-home:focus {
+    background: #be155e;
+}
+
+.container--post-details .card {
+    margin-top: 2em;
+    background: #f8f8f8;
+    border-color: #f8f8f8;
+}
+
+.container--post-details input {
+    background: #f8f8f8;
+}
+
+.container--header {
+    background: #f8f8f8;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header--left {
+    width:75%;
+}
+
+.header--left h2 {
+    margin-bottom: 1.75em;
+}
+
+.header--left .btn {
+    padding: .75em 3.5em;
+}
+
+.header--right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+}
+
+.header--right .btn +.btn {
+    margin-top: 1em;
 }

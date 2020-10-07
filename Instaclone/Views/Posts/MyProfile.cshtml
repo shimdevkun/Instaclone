@@ -3,17 +3,19 @@
     ViewBag.Title = "MyProfile";
 }
 
-<h2>My Profile</h2>
+<div class="container--header">
+    <div class="header--left">
+        <h2>My Profile</h2>
+        <button class="btn btn-primary" onclick="location.href = '@Url.Action("Create", "Posts")'">Add a Post</button>
+    </div>
+    <div class="header--right">
+        <button class="btn btn-outline-primary btn-followees" onclick="location.href='@Url.Action("MyFollowees", "Follows")'">Who I'm following</button>
+        <button class="btn btn-outline-primary btn-followees" onclick="location.href='@Url.Action("MyFollowers", "Follows")'">See my followers</button>
+    </div>
+</div>
+
 
 <div class="container--profile">
-
-    <button class="btn btn-outline-primary btn-followees" onclick="location.href='@Url.Action("MyFollowees", "Follows")'">Who I'm following</button>
-    <button class="btn btn-outline-primary btn-followees" onclick="location.href='@Url.Action("MyFollowers", "Follows")'">See my followers</button>
-    <br />
-    <button class="btn btn-primary" onclick="location.href = '@Url.Action("Create", "Posts")'">Add a Post</button>
-    <hr />
-    
-    
     @if (TempData["Message"] != null)
     {
         <div class="alert alert-info">
