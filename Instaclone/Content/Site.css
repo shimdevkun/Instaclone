@@ -92,6 +92,10 @@ h2 {
     color: #dc2071;
 }
 
+a {
+    color: #dc2071;
+}
+
 a:hover {
     cursor: pointer;
 }
