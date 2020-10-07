@@ -75,4 +75,18 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ## What it looks like
 
-Incoming...
+### Explore page
+
+![](https://i.imgur.com/v47KJ03.png)
+
+### Post's details
+
+![](https://i.imgur.com/Ga3EeeB.png)
+
+### Profile
+
+![](https://i.imgur.com/JOjx2bv.png)
+
+### Post creation
+
+![](https://i.imgur.com/LCfqZvY.gif)
