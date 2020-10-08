@@ -14,13 +14,11 @@
 <h2>Details</h2>
 
 <div class="container--post-details">
-    <div class="card col-md-10">
+    <div class="card col-md-12">
         <div class="row no-gutters">
             <div class="container--post--image col-md-7">
                 <img src="@Model.Post.ImageSrc" class="card-img" alt="">
 
-
-                <hr />
                 <div class="card-comment">
                     @using (Html.BeginForm("Create", "Comments"))
                     {
