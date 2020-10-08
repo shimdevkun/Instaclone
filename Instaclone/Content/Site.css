@@ -348,6 +348,16 @@ a:hover {
     width: 20%;
 }
 
+@media (max-width: 767px) {
+    .container--post--image {
+        margin-bottom: 2em;
+    }
+
+    .container--post-details .card-body {
+        padding: 0;
+    }
+}
+
 @media (max-width: 800px) {
     .container--header {
         flex-direction:column;
@@ -371,12 +381,17 @@ a:hover {
     }
 }
 
-@media (max-width: 767px) {
-    .container--post--image {
-        margin-bottom: 2em;
+@media (max-width: 991px) {
+    .card-comment form {
+        flex-direction: column;
     }
 
-    .container--post-details .card-body {
-        padding: 0;
+    .card .card-comment .form-control {
+        max-width: 100%;
+    }
+
+    .card-comment .btn.btn-outline-primary {
+        width: 100%;
+        margin-top: 1em;
     }
 }
