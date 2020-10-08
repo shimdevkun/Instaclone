@@ -76,11 +76,16 @@ textarea {
     border-bottom: 2px solid #f1f1f1;
 }
 
-input {
+input, textarea {
     background: #fafafa !important;
     border-color: #fafafa !important;
 }
 
+.alert.alert-info {
+    background: #dc2071;
+    color: #fafafa;
+    border-color: #fafafafa;
+}
 
 /* Site styles */
 body {
@@ -174,6 +179,10 @@ a:hover {
     margin-top: 2em;
 }
 
+.container--profile .posts > * {
+    margin-bottom: 2em;
+}
+
 .card .card-comment form {
     display: flex;
     align-items: center;
@@ -244,6 +253,11 @@ a:hover {
 
 .jumbotron img {
     border-radius: 5px;
+    max-width:100%;
+}
+
+.btn-home {
+    margin-bottom: 2em;
 }
 
 .btn-home:hover,
@@ -266,6 +280,7 @@ a:hover {
     padding: 2em;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2em;
 }
 
 .header--left {
@@ -289,4 +304,10 @@ a:hover {
 
 .header--right .btn +.btn {
     margin-top: 1em;
+}
+
+
+.input-group-append {
+    z-index: 3;
+    margin-left:-2.65em;
 }

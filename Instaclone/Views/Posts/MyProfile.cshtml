@@ -18,7 +18,7 @@
 <div class="container--profile">
     @if (TempData["Message"] != null)
     {
-        <div class="alert alert-info">
+        <div class="alert alert-info" id="success-alert">
             @TempData["Message"]
         </div>
     }
@@ -46,3 +46,13 @@
 
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#success-alert").fadeTo(3000, 500).slideUp(500, function () {
+                $("#success-alert").slideUp(500);
+            });
+        });
+    </script>
+}
