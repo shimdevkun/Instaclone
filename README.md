@@ -4,7 +4,7 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ## How to run
 
-1. Visit the website [incoming]()
+1. Visit the website [instaclonedev.azurewebsites.net](https://instaclonedev.azurewebsites.net/)
 
     OR
 
@@ -19,7 +19,15 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ## How to use Instaclone
 
-1. Log in as a user (see list below) // incoming...
+1. Log in as a user
+
+    | Email            | Password      |
+    | ---------------- | ------------- |
+    | jack@domain.com  | Jack1_domain  |
+    | alice@domain.com | Alice1_domain |
+    | mike@domain.com  | Mike1_domain  |
+    | luke@domain.com  | Luke1_domain  |
+
 2. Visit the following pages
 
 -   Personal feed
@@ -77,16 +85,16 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ### Explore page
 
-<!-- ![]() -->
+![](images/explore_page.png)
 
 ### Post's details
 
-<!-- ![]() -->
+![](images/details.png)
 
 ### Profile
 
-<!-- ![]() -->
+![](images/profile.png)
 
 ### Post creation
 
-<!-- ![]() -->
+![](images/post_creation.png)
