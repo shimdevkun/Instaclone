@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Instaclone.Controllers
 {
+    [Authorize]
     public class CommentsController : Controller
     {
         public ApplicationDbContext _context { get; set; }
