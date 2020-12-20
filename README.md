@@ -4,11 +4,9 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ## How to run
 
-1. Visit the website [instaclonedev.azurewebsites.net](https://instaclonedev.azurewebsites.net/)
+> Note: The instaclone website is no longer available
 
-    OR
-
-2. Open with Visual Studio and SSMS
+1. Open with Visual Studio and SSMS
 
 -   Download or clone project repo
 -   Open .sln project
@@ -19,14 +17,7 @@ This is a web application inspired by the Instagram social media platform. Users
 
 ## How to use Instaclone
 
-1. Log in as a user
-
-    | Email            | Password      |
-    | ---------------- | ------------- |
-    | jack@domain.com  | Jack1_domain  |
-    | alice@domain.com | Alice1_domain |
-    | mike@domain.com  | Mike1_domain  |
-    | luke@domain.com  | Luke1_domain  |
+1. Create a user
 
 2. Visit the following pages
 
